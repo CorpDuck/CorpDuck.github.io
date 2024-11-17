@@ -5,13 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Olympic Games Sign Up</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .message-container {
+            margin-top: 20px;
+            color: green;
+            font-weight: bold;
+        }
+        .error {
+            color: red;
+        }
+    </style>
 </head>
 <body>
 <div class="container">
     <h1>Joindre Olympic Spirit!</h1>
-    <form id="signup-form" action="trait_form.php" method="POST">
+    <form id="signup-form">
         <div class="form-group">
-            <label for="name" name="prenom">Nom et prenom</label>
+            <label for="name">Nom et prenom</label>
             <input type="text" id="name" name="name" required>
         </div>
         <div class="form-group">
@@ -29,6 +39,36 @@
         <button type="submit" class="btn">Sign Up</button>
         <p class="message">Already registered? <a href="#">Log in</a></p>
     </form>
+    <div class="message-container" id="message-container"></div>
 </div>
+
+<script>
+    document.getElementById('signup-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const password = document.getElementById('password').value.trim();
+        const confirmPassword = document.getElementById('confirm-password').value.trim();
+        const messageContainer = document.getElementById('message-container');
+
+        messageContainer.innerHTML = '';
+
+        if (!name || !email || !password || !confirmPassword) {
+            messageContainer.innerHTML = '<p class="error">All fields are required.</p>';
+            return;
+        }
+
+        if (password !== confirmPassword) {
+            messageContainer.innerHTML = '<p class="error">Passwords must match.</p>';
+            return;
+        }
+
+        messageContainer.innerHTML = `
+            <h1>You've successfully signed up!</h1>
+            <p>Hello, ${name}!</p>
+        `;
+    });
+</script>
 </body>
 </html>
