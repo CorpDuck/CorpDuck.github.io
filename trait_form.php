@@ -1,10 +1,10 @@
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER["REQUEST_METHOD"] == "GET") {
 
-    $name = htmlspecialchars($_POST['name']);
-    $email = htmlspecialchars($_POST['email']);
-    $password = htmlspecialchars($_POST['password']);
-    $confirm_password = htmlspecialchars($_POST['confirm-password']);
+    $name = htmlspecialchars($_GET['name']);
+    $email = htmlspecialchars($_GET['email']);
+    $password = htmlspecialchars($_GET['password']);
+    $confirm_password = htmlspecialchars($_GET['confirm-password']);
 
 
   
