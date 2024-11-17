@@ -1,18 +1,25 @@
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+function signUp(){
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    $name = htmlspecialchars($_POST['name']);
-    $email = htmlspecialchars($_POST['email']);
-    $password = htmlspecialchars($_POST['password']);
-    $confirm_password = htmlspecialchars($_POST['confirm-password']);
+        $name = $_POST['name'] ?? null;
+        $email = $_POST['email'] ?? null;
+        $password = $_POST['password'] ?? null;
+        $confirm_password = $_POST['confirm-password'] ?? null;
+        
 
 
-  
-    echo "<h1>You've successfully signed up!</h1>";
-    echo "<p>Welcome, $name!</p>";
-} else {
+    
+        echo "<h1>You've successfully signed up!</h1>";
+        echo "<p>Welcome, $name!</p>";
+    } else {
    
-    header("Location: index.html");
-    exit();
+        header("Location: index.html");
+        exit();
+    }
 }
-?>
+if(isset($_POST['submit'])) {
+   
+    signUp();
+
+}
