@@ -1,92 +1,87 @@
-.olympic{ 
-    height: 130px;
-    width: 200px;
+
+.olympic { 
+  height: 130px;
+  width: 200px;
 }
 
-.container{ 
-display: flex;
-justify-content: space-between;
+.container { 
+  display: flex;
+  justify-content: space-between;
 }
-
 
 button {
-    cursor: pointer;
-    border: 0;
-    border-radius: 4px;
-    font-weight: 600;
-    margin: 0 10px;
-    margin-top: 12px;
-    width: 200px;
-    padding: 10px 0;
-    box-shadow: 0 0 20px rgba(104, 85, 224, 0.2);
-    transition: 0.4s;
-    border: 1px solid rgba(104, 85, 224, 1);
-    height: 100px;
-  }
-
+  cursor: pointer;
+  border: 0;
+  border-radius: 4px;
+  font-weight: 600;
+  margin: 0 10px;
+  margin-top: 12px;
+  width: 200px;
+  padding: 10px 0;
+  box-shadow: 0 0 20px rgba(104, 85, 224, 0.2);
+  transition: 0.4s;
+  border: 1px solid rgba(104, 85, 224, 1);
+  height: 100px;
+}
 
 button:hover {
-    color: white;
-    box-shadow: 0 0 20px rgba(104, 85, 224, 0.6);
-    background-color: rgba(104, 85, 224, 1);
-  }
+  color: white;
+  box-shadow: 0 0 20px rgba(104, 85, 224, 0.6);
+  background-color: rgba(104, 85, 224, 1);
+}
 
-  h1{
-    font-family: "Olympic Headline", Helvetica, sans-serif;
-    font-size: 90px;
-  }
+h1 {
+  font-family: "Olympic Headline", Helvetica, sans-serif;
+  font-size: 90px;
+}
 
-  .container-main{
-    display: flex;
-    margin: 8%;
-    padding-top: 5%;
-  }
+.container-main {
+  display: flex;
+  margin: 8%;
+  padding-top: 5%;
+}
 
-  h2{
-    width: 400px;
-    height: 400px;
-    padding-left: 24%;
-    font-family: "Olympic Headline", Helvetica, sans-serif;
-  }
+h2 {
+  width: 400px;
+  height: 400px;
+  padding-left: 24%;
+  font-family: "Olympic Headline", Helvetica, sans-serif;
+}
 
-
-  .timer {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
+.timer {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
 }
 
 .countdown {
-    text-align: center;
+  text-align: center;
 }
 
 #timer {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
 }
 
 .time {
-    font-size: 3em;
-    margin: 0 10px;
+  font-size: 3em;
+  margin: 0 10px;
 }
 
 .label {
-    font-size: 1.2em;
+  font-size: 1.2em;
 }
 
 h3 { 
-
   font-family: "Olympic Headline", Helvetica, sans-serif;
-
 }
 
 header {
-  background-color: #f0f8ff;
   padding: 15px;
   text-align: center;
   position: fixed; /* Fixed position */
@@ -95,8 +90,45 @@ header {
   z-index: 1000;   /* Make sure it stays on top of other content */
 }
 
+/* Responsive Video */
 video { 
+  width: 100%;
+  height: auto; /* Maintain aspect ratio */
+}
 
-width: 100%;
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+  .container {
+      flex-direction: column; /* Stack elements vertically */
+      align-items: center; /* Center align items */
+  }
 
+  .olympic {
+      width: 100%; /* Make the Olympic flag responsive */
+      height: auto; /* Maintain aspect ratio */
+  }
+
+  button {
+      width: 100%; /* Full width on smaller screens */
+      height: auto; /* Adjust height */
+  }
+
+  h1 {
+      font-size: 50px; /* Adjust font size for smaller screens */
+  }
+
+  h2 {
+      width: auto; /* Allow h2 to take full width */
+      height: auto; /* Remove fixed height */
+      padding-left: 0; /* Remove left padding */
+      text-align: center; /* Center align text */
+  }
+
+  .time {
+      font-size: 2em; /* Adjust font size for time */
+  }
+
+  .label {
+      font-size: 1em; /* Adjust label font size */
+  }
 }

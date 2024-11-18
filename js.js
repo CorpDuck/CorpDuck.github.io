@@ -25,8 +25,8 @@ const timer = setInterval(() => {
 window.onscroll = function() {
     const header = document.getElementById("header");
     if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-        header.style.backgroundColor = "#e2f2ff"; // Darker when scrolling
+        header.style.backgroundColor = "#e0e0e0"; // Darker when scrolling
     } else {
-        header.style.backgroundColor = "#f0f8ff"; // Original color
+        header.style.backgroundColor = "#ffffff"; // Original color
     }
 };
